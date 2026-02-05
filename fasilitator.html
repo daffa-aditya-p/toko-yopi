@@ -155,12 +155,58 @@
             <span class="material-icons-round text-xl">dark_mode</span>
           </button>
           <a
-            class="bg-primary hover:bg-primary-hover text-black font-semibold text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+            class="hidden md:inline-block bg-primary hover:bg-primary-hover text-black font-semibold text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
             href="#register"
           >
             Daftar Sekarang
           </a>
+          <button
+            class="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-colors"
+            id="mobile-menu-toggle"
+          >
+            <span class="material-icons-round text-xl">menu</span>
+          </button>
         </div>
+      </nav>
+    </div>
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div
+        class="fixed top-20 right-4 left-4 md:hidden bg-white dark:bg-surface-dark rounded-2xl shadow-2xl p-6 transform translate-y-[-20px] transition-transform duration-300"
+        id="mobile-menu-content"
+      >
+        <nav class="flex flex-col gap-4">
+          <a
+            class="text-base font-medium text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors py-2 border-b border-slate-100 dark:border-white/10"
+            href="index.html"
+            >Profil Perusahaan</a
+          >
+          <a
+            class="text-base font-medium text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors py-2 border-b border-slate-100 dark:border-white/10"
+            href="produk.html"
+            >Produk</a
+          >
+          <a
+            class="text-base font-medium text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors py-2 border-b border-slate-100 dark:border-white/10"
+            href="marketing.html"
+            >Marketing Plan</a
+          >
+          <a
+            class="text-base font-medium text-primary dark:text-primary transition-colors py-2 border-b border-slate-100 dark:border-white/10"
+            href="fasilitator.html"
+            >Fasilitas</a
+          >
+          <a
+            class="bg-primary hover:bg-primary-hover text-black font-semibold text-center px-6 py-3 rounded-xl shadow-lg shadow-primary/20 transition-all mt-2"
+            href="#register"
+          >
+            Daftar Sekarang
+          </a>
+        </nav>
+      </div>
       </nav>
     </div>
     <main class="relative geometric-pattern min-h-screen pb-20">
@@ -423,6 +469,33 @@
         document.documentElement.classList.add("dark");
         icon.innerText = "light_mode";
       }
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileMenuContent = document.getElementById("mobile-menu-content");
+      const menuIcon = mobileMenuToggle.querySelector("span");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("pointer-events-none")) {
+          mobileMenu.classList.remove("pointer-events-none", "opacity-0");
+          mobileMenuContent.classList.remove("translate-y-[-20px]");
+          menuIcon.innerText = "close";
+        } else {
+          mobileMenu.classList.add("pointer-events-none", "opacity-0");
+          mobileMenuContent.classList.add("translate-y-[-20px]");
+          menuIcon.innerText = "menu";
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      mobileMenu.addEventListener("click", (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add("pointer-events-none", "opacity-0");
+          mobileMenuContent.classList.add("translate-y-[-20px]");
+          menuIcon.innerText = "menu";
+        }
+      });
     </script>
   </body>
 </html>
