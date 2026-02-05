@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>toko-yopi.my.id - Modern Reseller Platform</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37", // Metallic Gold
+              "primary-hover": "#B5952F",
+              "background-light": "#F8FAFC",
+              "background-dark": "#050505",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#0F0F0F",
+              "glass-light": "rgba(255, 255, 255, 0.7)",
+              "glass-dark": "rgba(15, 15, 15, 0.7)",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              body: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            backgroundImage: {
+              "hero-gradient":
+                "linear-gradient(135deg, #050505 0%, #1a1a1a 100%)",
+              "gold-gradient":
+                "linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .text-gradient-gold {
+        background: linear-gradient(
+          135deg,
+          #d4af37 0%,
+          #fce9b3 50%,
+          #b5952f 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .border-gradient-gold {
+        border: 1px solid transparent;
+        background:
+          linear-gradient(to right, #1a1a1a, #1a1a1a) padding-box,
+          linear-gradient(to right, #d4af37, #6b5610) border-box;
+      }
+      .dark .border-gradient-gold {
+        background:
+          linear-gradient(to right, #0f0f0f, #0f0f0f) padding-box,
+          linear-gradient(to right, #d4af37, #6b5610) border-box;
+      }
+      .glow-effect {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      }
+      .floating-anim {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+      .animate-slide-in-up {
+        animation: slideInUp 0.6s ease-out forwards;
+      }
+      .animate-fade-in-scale {
+        animation: fadeInScale 0.8s ease-out forwards;
+      }
+      .shimmer-effect {
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.3),
+          transparent
+        );
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite;
+      }
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-body antialiased selection:bg-primary selection:text-white transition-colors duration-300"
+  >
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+      <nav
+        class="glass bg-glass-light dark:bg-glass-dark border border-white/20 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between w-full max-w-6xl shadow-lg glow-effect transition-all duration-300"
+      >
+        <a class="flex items-center gap-2 group" href="#">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-yellow-200 flex items-center justify-center text-black font-bold font-display text-xl shadow-lg group-hover:scale-105 transition-transform"
+          >
+            B
+          </div>
+          <span
+            class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white"
+            >toko-yopi<span class="text-primary">.my.id</span></span
+          >
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="index.html"
+            >Profil Perusahaan</a
+          >
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="produk.html"
+            >Produk</a
+          >
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="marketing.html"
+            >Marketing Plan</a
+          >
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="fasilitator.html"
+            >Fasilitas</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-colors"
+            id="theme-toggle"
+          >
+            <span class="material-icons-round text-xl">dark_mode</span>
+          </button>
+          <a
+            class="bg-primary hover:bg-primary-hover text-black font-semibold text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+            href="#register"
+          >
+            Daftar Sekarang
+          </a>
+        </div>
+      </nav>
+    </div>
+    <section
+      class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-900/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"
+      ></div>
+      <div class="container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider uppercase"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-primary animate-pulse"
+              ></span>
+              Bisnis Reseller Era Digital
+            </div>
+            <h1
+              class="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-slate-900 dark:text-white"
+            >
+              Raih Kebebasan <br />
+              <span class="text-gradient-gold">Finansial Anda</span>
+            </h1>
+            <p
+              class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Bergabunglah dengan platform reseller toko-yopi.my.id. Potensi
+              penghasilan puluhan juta rupiah per bulan dengan support sistem
+              yang teruji.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
+              <a
+                class="w-full sm:w-auto px-8 py-4 bg-primary text-black font-bold rounded-xl shadow-xl shadow-primary/20 hover:bg-primary-hover transition-all transform hover:-translate-y-1 text-center"
+                href="#join"
+              >
+                Mulai Bisnis Sekarang
+              </a>
+              <a
+                class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group"
+                href="#learn"
+              >
+                <span
+                  class="material-icons-round group-hover:translate-x-1 transition-transform"
+                  >play_circle</span
+                >
+                Pelajari Cara Kerja
+              </a>
+            </div>
+            <div
+              class="pt-8 flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200 dark:border-white/10"
+            >
+              <div>
+                <p
+                  class="text-3xl font-display font-bold text-slate-900 dark:text-white"
+                >
+                  10k+
+                </p>
+                <p class="text-sm text-slate-500 dark:text-slate-500">
+                  Member Aktif
+                </p>
+              </div>
+              <div class="w-px h-10 bg-slate-200 dark:bg-white/10"></div>
+              <div>
+                <p
+                  class="text-3xl font-display font-bold text-slate-900 dark:text-white"
+                >
+                  150M+
+                </p>
+                <p class="text-sm text-slate-500 dark:text-slate-500">
+                  Total Rewards
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="relative lg:h-[600px] flex items-center justify-center">
+            <div
+              class="relative w-full aspect-square max-w-[500px] floating-anim"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-slate-200/50 to-white/50 dark:from-white/5 dark:to-white/10 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl flex flex-col p-6 rotate-3 transform transition-transform hover:rotate-0"
+              >
+                <div class="flex justify-between items-center mb-8">
+                  <div class="w-1/3 h-4 bg-slate-400/20 rounded-full"></div>
+                  <div class="w-8 h-8 bg-primary rounded-full opacity-80"></div>
+                </div>
+                <div
+                  class="flex-1 flex items-end justify-between gap-2 px-4 pb-4"
+                >
+                  <div class="w-full bg-primary/20 h-[30%] rounded-t-lg"></div>
+                  <div class="w-full bg-primary/40 h-[50%] rounded-t-lg"></div>
+                  <div class="w-full bg-primary/60 h-[40%] rounded-t-lg"></div>
+                  <div
+                    class="w-full bg-gradient-to-t from-primary to-yellow-300 h-[85%] rounded-t-lg relative group"
+                  >
+                    <div
+                      class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-3 py-1 rounded shadow-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      Income Naik!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute -bottom-10 -left-10 bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-white/10 flex items-center gap-4 animate-bounce"
+                style="animation-duration: 3s"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500"
+                >
+                  <span class="material-icons-round text-2xl">payments</span>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500 font-semibold uppercase">
+                    Potensi Income
+                  </p>
+                  <p class="font-bold text-slate-900 dark:text-white">
+                    Rp 50.000.000<span
+                      class="text-slate-400 text-sm font-normal"
+                      >/bln</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-slate-50 dark:bg-[#080808] relative" id="rewards">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+      ></div>
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2
+            class="font-display font-bold text-3xl md:text-5xl text-slate-900 dark:text-white mb-4"
+          >
+            Exclusive <span class="text-gradient-gold">Rewards</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Bukan sekedar janji. Berikut adalah reward nyata yang bisa Anda
+            dapatkan secara gratis melalui pencapaian target penjualan.
+          </p>
+        </div>
+        <div
+          class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 scrollbar-hide px-4 -mx-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible"
+        >
+          <div class="snap-center shrink-0 w-[85vw] md:w-auto relative group">
+            <div
+              class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+            ></div>
+            <div
+              class="relative bg-white dark:bg-[#121212] rounded-3xl p-2 border border-slate-200 dark:border-white/5 h-full flex flex-col overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="relative h-48 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+              >
+                <img
+                  alt="Motorbike Reward"
+                  class="object-cover w-full h-full opacity-90 group-hover:scale-110 transition-transform duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgdZvMCeTUrSjL6Fl51KgUks3tWY1bCNoSVjiGixT54Gz1NQBPaTnvRaRPjBnjuyPfvaIITLRQEGbWgsspXUJze_1RohAgEnWc27EOHTGNjxe_hdXjDus58sFVKCjVuJCie-QELZo4f6ZXcJWrW8i3DuNv2xk0fR3eBKXLRuoEXCtSOSDk3yNrAIdc_QM3wQWiNqEp03wWjHD1RCmIZ9km3cqS4BILDRRFkQlMMXlGffDg5svwAhOIkPrHK8ee8PX8aLpgdJRw-Xs"
+                />
+                <div
+                  class="absolute top-3 right-3 bg-black/50 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-bold border border-white/20"
+                >
+                  Level 1
+                </div>
+              </div>
+              <div class="p-6 text-center">
+                <h3
+                  class="text-xl font-display font-bold text-slate-900 dark:text-white mb-1"
+                >
+                  Motor Sport
+                </h3>
+                <p class="text-primary font-bold mb-4">Nilai Rp 20.000.000</p>
+                <div
+                  class="h-px w-full bg-slate-100 dark:bg-white/10 mb-4"
+                ></div>
+                <p
+                  class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed"
+                >
+                  Reward awal untuk pencapaian 500 pasang poin. Kendaraan
+                  operasional untuk mempercepat bisnis Anda.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="snap-center shrink-0 w-[85vw] md:w-auto relative group md:-mt-8"
+          >
+            <div
+              class="absolute inset-0 bg-primary/40 blur-2xl opacity-40 rounded-3xl"
+            ></div>
+            <div
+              class="relative bg-white dark:bg-[#161616] rounded-3xl p-1 border-2 border-primary/50 h-full flex flex-col overflow-hidden z-10 shadow-2xl"
+            >
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-black font-bold text-xs px-4 py-1 rounded-b-lg z-20 shadow-lg"
+              >
+                MOST POPULAR
+              </div>
+              <div
+                class="relative h-56 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center mt-3 mx-3"
+              >
+                <img
+                  alt="Car Reward"
+                  class="object-cover w-full h-full opacity-90 group-hover:scale-110 transition-transform duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGqSj7RSMMJqG_9s1XPa2cD6OaO2XQGn0eRt65SWcePLlZxH8OEdPttPi9s_1NzO3G3GfQ0Ew9Ia0pOs8qqOSHu1Y_pE7j8U8w-ks0T7nQT3emIdC4KbNsCLuM1Rg4ui3npdR1ZfugHXSwVGmkONAJO8y3laVq2omu4U7gU623mVaV3-qeSWhDsqbNn81qAvyTOd-8f_K9PFrw-2uG5TBZYAjakH3RvZ4AUF2p8_DVw0bkvffgbLk1uMvQv2Pfp6eilHRhmjsJTpY"
+                />
+              </div>
+              <div class="p-8 text-center">
+                <h3
+                  class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-1"
+                >
+                  City Car
+                </h3>
+                <p class="text-primary font-bold text-lg mb-6">
+                  Nilai Rp 150.000.000
+                </p>
+                <ul
+                  class="text-sm text-slate-500 dark:text-slate-400 space-y-2 text-left px-4 mb-6"
+                >
+                  <li class="flex items-center gap-2">
+                    <span class="material-icons-round text-primary text-base"
+                      >check_circle</span
+                    >
+                    Tanpa diundi
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-icons-round text-primary text-base"
+                      >check_circle</span
+                    >
+                    BPKB Atas Nama Sendiri
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-icons-round text-primary text-base"
+                      >check_circle</span
+                    >
+                    Pajak Ditanggung
+                  </li>
+                </ul>
+                <button
+                  class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-yellow-400 text-black font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow"
+                >
+                  Kejar Reward Ini
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="snap-center shrink-0 w-[85vw] md:w-auto relative group">
+            <div
+              class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+            ></div>
+            <div
+              class="relative bg-white dark:bg-[#121212] rounded-3xl p-2 border border-slate-200 dark:border-white/5 h-full flex flex-col overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div
+                class="relative h-48 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+              >
+                <img
+                  alt="Luxury House Reward"
+                  class="object-cover w-full h-full opacity-90 group-hover:scale-110 transition-transform duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Sk8xwQ2xAgXC228GRcKp9HzMEhIdHFQuybOZBXhLFjINHvubKYJFNlS4c_NzeOb7I8ReAkKmvxmMcyAPh_1eUM5CyFcpTqEy2q37qyWUWPCTMP29BRLH12om0tp8Oapzgka3bdd6znDF9Xg5GmUsMJJTRE4YgZRYVeOjV2-Ik05SKJb-YcEprOyxs9z2GQ7ys_yjTBy4d9clmMY5GZIh-ltI2jGh8luejBiHtExLoEjK3Ze3_8M9p_ZE2ffW_31suWlkQS2oWiA"
+                />
+                <div
+                  class="absolute top-3 right-3 bg-black/50 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-bold border border-white/20"
+                >
+                  Ultimate
+                </div>
+              </div>
+              <div class="p-6 text-center">
+                <h3
+                  class="text-xl font-display font-bold text-slate-900 dark:text-white mb-1"
+                >
+                  Luxury House
+                </h3>
+                <p class="text-primary font-bold mb-4">Nilai Rp 1.5 Milyar</p>
+                <div
+                  class="h-px w-full bg-slate-100 dark:bg-white/10 mb-4"
+                ></div>
+                <p
+                  class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed"
+                >
+                  Pencapaian tertinggi seorang leader. Rumah mewah impian
+                  keluarga Anda di lokasi strategis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 rounded-3xl bg-slate-900 dark:bg-[#1a1a1a] p-8 md:p-12 relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-black/80 to-transparent z-10"
+          ></div>
+          <img
+            alt="Luxury SUV"
+            class="absolute top-0 right-0 h-full w-2/3 object-cover opacity-60 mix-blend-overlay"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZkCYxK8Pl3D_d4lkXtKxCN6z1-TiwSyPd7Lz2LkiiDgNTL-v0kyibDfHwEhriL-RYdvsVkdHQzkL3a-V-SmPTp_eB7LCEtv0NBnD69xXCgnP1GWXjXZDA_h-XJooD3_GApbenJ_i-4G3S1upqBwHLDRjaO4G5yKtgHfeCCjlbhIroXqSNseQ6gHEVrvsq2W7AwNvpvvtJK3sFWa29xDTZa9IWmrijkR_zABXSU2hc-Q8r7vtE-PmNfl2b9-2y6C9G4GNxl1bitI"
+          />
+          <div class="relative z-20 max-w-lg">
+            <div
+              class="inline-block px-3 py-1 bg-primary text-black text-xs font-bold rounded mb-4"
+            >
+              SPECIAL TIER
+            </div>
+            <h3
+              class="text-3xl md:text-4xl font-display font-bold text-white mb-2"
+            >
+              Pajero Sport / Fortuner
+            </h3>
+            <p class="text-primary text-2xl font-bold mb-6">
+              Cash Rp 500.000.000
+            </p>
+            <p class="text-slate-300 mb-8 leading-relaxed">
+              Upgrade gaya hidup Anda dengan SUV Premium. Didapatkan murni dari
+              akumulasi poin grup tanpa reset.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-white font-semibold border-b border-primary hover:text-primary transition-colors pb-1"
+              href="#"
+            >
+              Lihat Syarat &amp; Ketentuan
+              <span class="material-icons-round text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2
+          class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-12"
+        >
+          Mereka yang Telah Sukses
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 text-left flex items-start gap-4"
+          >
+            <img
+              alt="User"
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-primary/20"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVNKUSUbRzxiTCO4mV-LfyiXf9p5oSCW_mTiUZBnSrC1D2zrWJASHwUeLJYWfF7CmbEG9YdAwKPGTflttjlB4XAVdSrlQCguFzEaO5DUMbMADMsMFV9aUX0wNQaTIBrGVZ6wfGJS1P-YvA5mSyfyW-NLPqYDct9RzHwr9dYeqFZskLsMvnx3DoPq9T8plqNx-Hi6FXj9-S1Av_-gpjTOPMbNILRY-G1A1eyuaWP6uUzu8Anjdm_NHPkVEmP6NGaZ-BHkYb0RJUNvU"
+            />
+            <div>
+              <p class="text-sm text-slate-600 dark:text-slate-300 italic mb-2">
+                "Saya ibu rumah tangga, awalnya ragu. Tapi sistem toko-yopi sangat
+                mudah dijalankan. Bulan kedua sudah tembus income 10 juta!"
+              </p>
+              <p class="text-sm font-bold text-slate-900 dark:text-white">
+                Sari Rahayu
+              </p>
+              <p class="text-xs text-slate-500">Ibu Rumah Tangga, Bandung</p>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 text-left flex items-start gap-4"
+          >
+            <img
+              alt="User"
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-primary/20"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMX3wPCxr9HMg3aK75pN2qiCh47HY7jPNzcalFA_UZun9e94SZoZIRhEabBdtWjm7SIlShdeOHw_W_jETueU8bsldeWKqfqhvHTmLW1UGrH-hUoXxlTAR-JN54KLKnKIwFyBTWwhOmvJPF6nT23Wgt-57IhSh09D1RgtyAKVgJBEALYHTQDA_SwRbA23gj-GOzst8jkuaWTGjddr6o7FEihnpZA1nLTeAQre3YMe7TcHvNRkwSmyUk-_xgN67_CPEzrvQwZNW6S9o"
+            />
+            <div>
+              <p class="text-sm text-slate-600 dark:text-slate-300 italic mb-2">
+                "Pencairan bonus harian sangat membantu cashflow saya. Tidak
+                perlu menunggu akhir bulan. Platform terbaik!"
+              </p>
+              <p class="text-sm font-bold text-slate-900 dark:text-white">
+                Budi Santoso
+              </p>
+              <p class="text-xs text-slate-500">Karyawan Swasta, Jakarta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-slate-900 dark:bg-black"></div>
+      <div
+        class="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+      ></div>
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10 text-center">
+        <h2
+          class="font-display font-extrabold text-4xl md:text-6xl text-white mb-6"
+        >
+          Siap Mengubah <span class="text-primary">Masa Depan?</span>
+        </h2>
+        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+          Jangan tunda kesuksesan Anda. Waktu terbaik untuk memulai adalah
+          sekarang. Amankan posisi Anda di jaringan toko-yopi.my.id.
+        </p>
+        <form
+          class="max-w-md mx-auto bg-white/5 backdrop-blur-md p-2 rounded-2xl border border-white/10 flex flex-col sm:flex-row gap-2"
+        >
+          <input
+            class="flex-1 bg-transparent border-none text-white placeholder-slate-400 focus:ring-0 px-4 py-3"
+            placeholder="Masukkan alamat email Anda"
+            type="email"
+          />
+          <button
+            class="bg-primary hover:bg-primary-hover text-black font-bold px-8 py-3 rounded-xl transition-colors shadow-lg shadow-primary/25 whitespace-nowrap"
+            type="button"
+          >
+            Join Sekarang
+          </button>
+        </form>
+        <p class="text-xs text-slate-500 mt-4">
+          Pendaftaran gratis untuk member basic. Syarat &amp; Ketentuan berlaku.
+        </p>
+      </div>
+    </section>
+    <footer
+      class="bg-white dark:bg-[#050505] border-t border-slate-200 dark:border-white/5 py-12"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <div
+                class="w-6 h-6 rounded bg-primary flex items-center justify-center text-black font-bold font-display text-sm"
+              >
+                B
+              </div>
+              <span
+                class="font-display font-bold text-lg text-slate-900 dark:text-white"
+                >toko-yopi.my.id</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-sm"
+            >
+              Platform bisnis reseller modern yang memberikan peluang bagi siapa
+              saja untuk mencapai kebebasan finansial dengan produk berkualitas
+              dan sistem bagi hasil yang adil.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-4">
+              Perusahaan
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <a class="hover:text-primary transition-colors" href="index.html"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="index.html"
+                  >Legalitas</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="index.html"
+                  >Hubungi Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-4">
+              Bantuan
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <a class="hover:text-primary transition-colors" href="marketing.html"
+                  >Marketing Plan</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="index.html">FAQ</a>
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="index.html"
+                  >Login Member</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-slate-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-slate-400">
+            © 2023 toko-yopi.my.id. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a class="text-slate-400 hover:text-primary" href="#"
+              ><span class="material-icons-round text-lg">facebook</span></a
+            >
+            <a class="text-slate-400 hover:text-primary" href="#"
+              ><span class="material-icons-round text-lg">camera_alt</span></a
+            >
+            <a class="text-slate-400 hover:text-primary" href="#"
+              ><span class="material-icons-round text-lg"
+                >ondemand_video</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="fixed bottom-6 left-6 z-50 transform transition-all duration-500 translate-y-0 opacity-100"
+      id="toast"
+    >
+      <div
+        class="bg-white/90 dark:bg-slate-800/90 backdrop-blur border-l-4 border-primary shadow-2xl p-4 rounded-r-lg max-w-xs flex items-center gap-3"
+      >
+        <div
+          class="bg-green-100 dark:bg-green-900/30 p-2 rounded-full shrink-0"
+        >
+          <span
+            class="material-icons-round text-green-600 dark:text-green-400 text-sm"
+            >person_add</span
+          >
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-0.5">
+            Baru saja mendaftar
+          </p>
+          <p
+            class="text-sm font-bold text-slate-800 dark:text-slate-100 line-clamp-1"
+          >
+            Lucky Wiratama (Bandung)
+          </p>
+        </div>
+        <button
+          class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 ml-auto"
+          onclick="
+            document
+              .getElementById('toast')
+              .classList.add('translate-y-20', 'opacity-0')
+          "
+        >
+          <span class="material-icons-round text-sm">close</span>
+        </button>
+      </div>
+    </div>
+    <a
+      class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg hover:shadow-green-500/30 transition-all hover:scale-110 flex items-center justify-center"
+      href="#"
+    >
+      <svg
+        class="w-8 h-8"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        ></path>
+      </svg>
+    </a>
+    <script>
+      // Simple dark mode toggle logic
+      const btn = document.getElementById("theme-toggle");
+      const icon = btn.querySelector("span");
+      btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+          icon.innerText = "light_mode";
+        } else {
+          icon.innerText = "dark_mode";
+        }
+      });
+      // Initialize dark mode based on preference
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
+        icon.innerText = "light_mode";
+      }
+    </script>
+  </body>
+</html>

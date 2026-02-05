@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cara Mudah Menjalankan Bisnis - toko-yopi.my.id Redesign</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37", // Soft Gold
+              "primary-hover": "#B5952F",
+              secondary: "#333333", // Charcoal Grey
+              "background-light": "#F9FAFB", // Very light gray/white
+              "background-dark": "#111827", // Dark gray/black
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1F2937",
+              "glass-light": "rgba(255, 255, 255, 0.7)",
+              "glass-dark": "rgba(15, 15, 15, 0.7)",
+            },
+            fontFamily: {
+              serif: ["'Playfair Display'", "serif"],
+              sans: ["'Inter'", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(156, 163, 175, 0.5);
+        border-radius: 20px;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .animate-slide-in {
+        animation: slideIn 0.6s ease-out;
+      }
+      .hover-grow {
+        transition: transform 0.3s ease;
+      }
+      .hover-grow:hover {
+        transform: scale(1.02);
+      }
+      .glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .glow-effect {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .dark .glass-panel {
+        background: rgba(31, 41, 55, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .play-button-pulse {
+        animation: pulse-gold 2s infinite;
+      }
+      @keyframes pulse-gold {
+        0% {
+          box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300"
+  >
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+      <nav
+        class="glass bg-glass-light dark:bg-glass-dark border border-white/20 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between w-full max-w-6xl shadow-lg glow-effect transition-all duration-300"
+      >
+        <a class="flex items-center gap-2 group" href="index.html">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-yellow-200 flex items-center justify-center text-black font-bold font-display text-xl shadow-lg group-hover:scale-105 transition-transform"
+          >
+            T
+          </div>
+          <span
+            class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white"
+            >toko-yopi<span class="text-primary">.my.id</span></span
+          >
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="index.html"
+            >Profil Perusahaan</a
+          >
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="produk.html"
+            >Produk</a
+          >
+          <a
+            class="text-sm font-medium text-primary dark:text-primary transition-colors border-b-2 border-primary pb-0.5"
+            href="marketing.html"
+            >Marketing Plan</a
+          >
+          <a
+            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            href="fasilitator.html"
+            >Fasilitas</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-colors"
+            id="theme-toggle"
+          >
+            <span class="material-icons-round text-xl">dark_mode</span>
+          </button>
+          <a
+            class="bg-primary hover:bg-primary-hover text-black font-semibold text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+            href="#register"
+          >
+            Daftar Sekarang
+          </a>
+        </div>
+      </nav>
+    </div>
+    <main
+      class="min-h-screen pt-20 flex flex-col lg:flex-row relative overflow-hidden"
+    >
+      <div
+        class="w-full lg:w-1/2 relative lg:fixed lg:h-[calc(100vh-5rem)] lg:top-20 left-0 bg-gray-100 dark:bg-gray-800 overflow-hidden group"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 lg:bg-gradient-to-r lg:from-transparent lg:to-black/40"
+        ></div>
+        <img
+          alt="Professional Businessman Smiling"
+          class="w-full h-[50vh] lg:h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoJHprbhi6JdME3hEa_jEoVdLBvd-KO3GbE8MXgAVGHvrtB5vCti4TXrC2JRzYDZJ8bnR-_4DnQJ1kEuw3NuW1ZgSGWPaMwG6P8kq6UkV1Kl2oVVGSQJ5-a2kQjNIH1_2uw9_nNaGRvOuAlZgSm2y-le72YkxC5bRPCKNolWWYlFenzSnAUAv4dvGFURxsdTrZ7JLD8sKTKgN26pPbbLDpU1oOLneZigxNtNhuTc7CiqmBJ-atXO8BDeRn9ZjXi3xF3sYqeiwdxHg"
+        />
+        <div class="absolute bottom-8 left-8 z-20 text-white max-w-md">
+          <div
+            class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-bold tracking-wider mb-3 shadow-sm"
+          >
+            SUCCESS STORY
+          </div>
+          <h2 class="text-3xl font-serif italic font-light leading-tight">
+            "Bisnis ini mengubah perspektif finansial saya sepenuhnya."
+          </h2>
+          <p class="mt-2 text-gray-200 font-light text-sm">
+            — Member Platinum toko-yopi
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-1/2 ml-auto bg-background-light dark:bg-background-dark px-6 py-12 lg:px-16 lg:py-20 xl:px-24"
+      >
+        <div class="max-w-xl mx-auto">
+          <div class="mb-12">
+            <h1
+              class="font-serif text-4xl lg:text-5xl text-gray-900 dark:text-white leading-tight mb-4"
+            >
+              Jalankan Bisnis Anda dengan
+              <span class="text-primary italic">Mudah</span>
+            </h1>
+            <p
+              class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed font-light"
+            >
+              Pelajari sistem revolusioner kami yang dirancang untuk membantu
+              Anda mencapai kebebasan finansial. Sederhana, transparan, dan
+              terbukti.
+            </p>
+          </div>
+          <div class="relative mb-16 group cursor-pointer">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-yellow-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative glass-panel rounded-2xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+            >
+              <img
+                alt="Video Presentation Thumbnail"
+                class="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-75"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL0JG7RFWjt58fNpZB8hyjzGdNszkVo_M7uZvUW9iXFbT2Rp-QyO0jXvH9CZ67Cix7SWnJqKKAAPyuj9OMC6ADA7LqLmiYYI7Eq3zyY1LaFvnC9ZoO9s0csLjUVjJvot3BFTjN3jbE1r0fVL5cPpHMk9HGMBTWTOq0Gz0BHfCAey-k73aSX75f9BTrbEZF55NADbkC7_cFdVANYGHZJXfh1LEZPF5vbH_iIZSVfoF7131aLd-Zo1plybyZij8Bs1YITMpq3CZtlIo"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"
+              ></div>
+              <button
+                class="relative z-10 w-20 h-20 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg play-button-pulse transition-transform transform group-hover:scale-110"
+              >
+                <span class="material-icons-outlined text-primary text-4xl ml-1"
+                  >play_arrow</span
+                >
+              </button>
+              <div class="absolute bottom-4 left-4 z-10">
+                <span
+                  class="bg-black/60 text-white text-xs px-2 py-1 rounded font-medium"
+                  >05:24</span
+                >
+              </div>
+            </div>
+            <p
+              class="mt-4 text-center text-sm font-medium text-gray-500 dark:text-gray-400 italic"
+            >
+              *Tonton sampai selesai untuk pemahaman utuh sistem kami
+            </p>
+          </div>
+          <div class="space-y-8 relative">
+            <div
+              class="absolute left-6 top-4 bottom-4 w-px bg-gray-200 dark:bg-gray-700 hidden sm:block"
+            ></div>
+            <div class="relative flex items-start gap-6 group">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center z-10 group-hover:border-primary transition-colors"
+              >
+                <span class="material-icons-outlined text-primary text-2xl"
+                  >play_circle</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-serif font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+                >
+                  Tonton Video
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Luangkan waktu sejenak untuk menyimak presentasi bisnis. Kami
+                  menjelaskan detail sistem tanpa ada yang disembunyikan.
+                </p>
+              </div>
+            </div>
+            <div class="relative flex items-start gap-6 group">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center z-10 group-hover:border-primary transition-colors"
+              >
+                <span class="material-icons-outlined text-primary text-2xl"
+                  >psychology</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-serif font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+                >
+                  Pahami Sistem
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Pelajari bagaimana marketing plan kami bekerja untuk
+                  keuntungan Anda. Sistem yang adil dan transparan adalah kunci
+                  kepercayaan.
+                </p>
+              </div>
+            </div>
+            <div class="relative flex items-start gap-6 group">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center z-10 group-hover:border-primary transition-colors"
+              >
+                <span class="material-icons-outlined text-primary text-2xl"
+                  >rocket_launch</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-serif font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+                >
+                  Mulai Sukses
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Setelah paham, segera ambil tindakan. Bergabunglah dengan
+                  ribuan member lain yang telah memulai perjalanan sukses
+                  mereka.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <div class="text-center">
+              <p class="text-lg font-serif text-gray-900 dark:text-white mb-6">
+                Siap untuk perubahan besar?
+              </p>
+              <button
+                class="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-primary dark:hover:bg-gray-200 px-8 py-4 rounded-xl font-semibold transition-all shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto"
+              >
+                <span>Daftar Sekarang</span>
+                <span class="material-icons-outlined text-sm"
+                  >arrow_forward</span
+                >
+              </button>
+              <p class="mt-4 text-xs text-gray-400 dark:text-gray-500">
+                Garansi kepuasan bimbingan bisnis penuh.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      class="fixed bottom-0 right-0 w-96 h-96 bg-primary opacity-5 dark:opacity-5 blur-3xl rounded-full pointer-events-none -z-10 translate-x-1/3 translate-y-1/3"
+    ></div>
+    <script>
+      // Dark mode toggle
+      const btn = document.getElementById("theme-toggle");
+      const icon = btn.querySelector("span");
+      btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+          icon.innerText = "light_mode";
+        } else {
+          icon.innerText = "dark_mode";
+        }
+      });
+      // Initialize dark mode based on preference
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
+        icon.innerText = "light_mode";
+      }
+    </script>
+  </body>
+</html>
